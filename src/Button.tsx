@@ -1,9 +1,23 @@
 import React from 'react';
+import './App.css';
 
-export const Button = () => {
+type ButtonType = {
+    name: string;
+    callBack: () => void;
+    disabled: boolean;
+
+
+}
+export const Button = (props: ButtonType) => {
+
+    const onClickHandler = () => {
+        props.callBack()
+    }
+
     return (
         <div>
-            <button>Inc</button>
+
+            <button className="btn" onClick={onClickHandler} disabled={props.disabled}>{props.name}</button>
         </div>
     );
 };

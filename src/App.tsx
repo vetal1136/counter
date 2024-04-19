@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Button} from "./Button";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const maxNumber = 5;
+    const minNumber = 0;
+    const step = 1;
+
+
+    const [count, setCount] = useState<number>(minNumber)
+
+    const Inc = () => {
+        if (count < maxNumber) {
+            setCount(count + step)
+        }
+
+    }
+    const Dec = () => {
+        setCount(count - step)
+
+    }
+    const Reset = () => {
+        setCount(minNumber)
+    }
+    return (
+
+        <div className="App">
+            <div className="wrapper-counter">
+                <div className="counter">
+                    <h1 className={count === maxNumber ? "max-number" : ""}>
+                        {count}
+                    </h1>
+                </div>
+                <div className="counter-btn">
+                    <Button name={"plus"} callBack={Inc} disabled={count === maxNumber}/>
+                    <Button name={"minus"} callBack={Dec} disabled={count === minNumber}/>
+                    <Button name={"delete"} callBack={Reset} disabled={count === minNumber}/>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
