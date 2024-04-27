@@ -7,6 +7,7 @@
 .wrapper-counter {
     border: 1px solid #000;
     border-radius: 5px;
+    margin-right: 50px;
 }
 .counter {
     border: 1px solid #000;
@@ -27,10 +28,10 @@
     margin-right: 5px;
     height: 30px;
     min-width: 50px;
-    border: 1px solid #000;
     border-radius: 5px;
     background-color: darkseagreen;
     cursor: pointer;
+    border: none;
 }
 
 .btn:hover {

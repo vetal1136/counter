@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import '../../App.css';
 
 type ButtonType = {
-    name: string;
-    callBack: () => void;
-    disabled: boolean;
+    name: string
+    callBack: () => void
+    disabled?: boolean
 
 
 }
